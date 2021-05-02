@@ -1,8 +1,9 @@
 import React, { FC } from "react"
+import { Message } from "../../components"
 const ChatBot:FC =(props:any)=> {
     return (
         <div>
-            <p>Chat</p>
+            <Message />
         </div>
     )
 }
