@@ -1,12 +1,14 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 // Pages
 import {Welcome, ChatBot} from "./pages"
 
 function App() {
   return (
     // <Welcome />
-    <ChatBot />
+    <div className="wrapper">
+      <ChatBot />
+    </div>
   );
 }
 

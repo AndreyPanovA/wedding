@@ -1,9 +1,18 @@
-import React from "react"
+import React, { FC } from "react"
+import PanovSiri from "../panov-siri";
 import cls from  './mystyles.module.scss';
-const Message =(props:any)=> {
+interface Props {
+    text:string
+}
+const Message:FC<Props> =({text=""})=> {
     return (
         <div className={cls.container}>
-            <p className={cls.text}>cool</p>
+            <div className={cls.siri}>
+                <PanovSiri />
+            </div>
+            <div className={cls.message+" "+cls.out}>
+                <p className={cls.text}>{text}</p>
+            </div>
         </div>
     )
 }
