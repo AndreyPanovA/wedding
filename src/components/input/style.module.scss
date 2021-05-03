@@ -1,0 +1,21 @@
+@import "../../styles/constants.scss";
+.container {
+    display: flex;
+    flex-direction: column;
+    label {
+        margin-bottom: 10px;
+        color:$label;
+    }
+   .input {
+       height: 100%;
+       padding: 10px 20px;
+       background: white;
+       outline: none;
+       border-radius: 10px;
+       border:2px solid white;
+    //    color: white;
+       &:focus {
+        //    color: white;
+       }
+   }
+}
