@@ -19,8 +19,8 @@ interface Props {
 const Navigation:FC<Props> =({isAuth})=> {
   return(
   <Router>
-      <Route path="/" component={ChatBot}/>
-      <Route path="/welcome" component={Welcome}/>
+      <Route path="/" exact component={ChatBot}/>
+      <Route path="/wellcome" exact component={Welcome}/>
   </Router>
   )
 }
@@ -30,4 +30,4 @@ export default connect(
       const {auth: {isAuth}}= state
       return {isAuth}
     },{setAuth}
-  )(ChatBot)
+  )(Navigation)
