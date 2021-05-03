@@ -15,18 +15,20 @@ export const CUSTOM ={
         marginRight:"auto"
     },
     centerRow: {
-        flexDirection:'row',
+        display:"flex",
+        ["flex-direction"]:'row',
         alignItems:"center", 
         justifyContent:"center"
     },
     centerRowWrap: {
-        flexDirection:'row',
+        ["flex-direction"]:'row',
         alignItems:"center", 
         justifyContent:"center", 
         flexWrap:"wrap"
     },
     betweenRow: {
-        flexDirection:'row',
+        display:"flex",
+        ["flex-direction"]:'row',
         alignItems:"center", 
         justifyContent:"space-between", 
     }, 

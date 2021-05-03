@@ -11,7 +11,7 @@ import {CUSTOM} from "../../constants"
 // Redux
 import {connect} from "react-redux"
 import {setAuth} from "../../redux/reducers/auth"
-import { withRouter, WithRouterProps } from "react-router";
+import { withRouter} from "react-router";
 // Navigation
 interface Props  {
     isAuth:boolean,
@@ -20,7 +20,7 @@ interface Props  {
 }
 const ChatBot:FC<Props> =({isAuth,history})=> {
     useEffect(()=>{
-        if (isAuth) {
+        if (!isAuth) {
             setTimeout(()=>{
                 history.push("/wellcome")
             },1000)
