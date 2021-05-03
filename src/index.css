@@ -17,3 +17,18 @@ code {
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  line-height: 36px;
+}
+input {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  line-height: 36px;
+}
+label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+}

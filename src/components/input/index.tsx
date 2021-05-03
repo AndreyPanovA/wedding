@@ -6,8 +6,8 @@ import cls from "./style.module.scss"
 // interfaces
 import {InputTarget} from "../../interfaces"
 // icons
-import { FaRegTimesCircle } from 'react-icons/fa';
-import { RED } from "../../constants";
+import { FaRegTimesCircle,FaCheck, FaChevronRight } from 'react-icons/fa';
+import { GREEN, RED } from "../../constants";
 const Input =(props:any)=> {
     const [state, setState]=useState("")
     const callbacks ={
@@ -15,6 +15,7 @@ const Input =(props:any)=> {
             console.log(value)           
         }
     }
+    const auth=false
     return (
         <div className={cls.container}>
             <label htmlFor="phone">Введите номер телефона ниже</label>
@@ -28,7 +29,9 @@ const Input =(props:any)=> {
                     className={cls.input}
                     onChange={callbacks.onChangeText}
                     />
-                <FaRegTimesCircle color={RED} size={20}/>
+                {!auth ?<FaCheck  color={GREEN} size={20}/> :
+                <FaRegTimesCircle color={RED} size={20}/>}
+               
             </div>
         </div>
     )

@@ -1,4 +1,8 @@
+// Colors
 export const RED="#C21D1D"
+export const GREEN="#43CC82"
+export const GREY="#D3D9E3"
+// Styles
 export const CUSTOM ={
     center: {
         display:"flex",
@@ -34,6 +38,9 @@ export const CUSTOM ={
     },
 }
 export default {
+    // Colors
     RED,
+    GREEN,
+    // Styles
     CUSTOM
 }
