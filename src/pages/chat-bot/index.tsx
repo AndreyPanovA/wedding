@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 // Components
 import { Input, Message } from "../../components";
 // Styles
@@ -11,10 +11,24 @@ import {CUSTOM} from "../../constants"
 // Redux
 import {connect} from "react-redux"
 import {setAuth} from "../../redux/reducers/auth"
-const ChatBot:FC =(props:any)=> {
+import { withRouter, WithRouterProps } from "react-router";
+// Navigation
+interface Props  {
+    isAuth:boolean,
+    history:any
+
+}
+const ChatBot:FC<Props> =({isAuth,history})=> {
+    useEffect(()=>{
+        if (isAuth) {
+            setTimeout(()=>{
+                history.push("/wellcome")
+            },1000)
+        }  
+    },[isAuth])
     return (
         <div className={cn(cls.container)}>
-            <h1>{JSON.stringify(props.isAuth)}</h1>
+            {/* <h1>{JSON.stringify(isAuth)}</h1> */}
             {data.startConverssation.messages.map(({text},idx)=> <Message text={text}/>)}
             <div style={CUSTOM.center}>
                 <Input />
@@ -24,9 +38,9 @@ const ChatBot:FC =(props:any)=> {
 }
 
 
-export default connect(
+export default withRouter(connect(
     (state:any)=> {
       const {auth: {isAuth}}= state
       return {isAuth}
     },{setAuth}
-  )(ChatBot)
+  )(ChatBot))
