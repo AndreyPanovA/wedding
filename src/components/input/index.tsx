@@ -5,7 +5,6 @@ import cn from "classnames"
 import cls from "./style.module.scss"
 // interfaces
 import {InputTarget} from "../../interfaces"
-
 // icons
 import { FaRegTimesCircle,FaCheck, FaChevronRight } from 'react-icons/fa';
 import { GREEN, RED } from "../../constants";

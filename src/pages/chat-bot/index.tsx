@@ -8,9 +8,13 @@ import cn from "classnames";
 import data from "../../data"
 // Constants
 import {CUSTOM} from "../../constants"
+// Redux
+import {connect} from "react-redux"
+import {setAuth} from "../../redux/reducers/auth"
 const ChatBot:FC =(props:any)=> {
     return (
         <div className={cn(cls.container)}>
+            <h1>{JSON.stringify(props.isAuth)}</h1>
             {data.startConverssation.messages.map(({text},idx)=> <Message text={text}/>)}
             <div style={CUSTOM.center}>
                 <Input />
@@ -18,4 +22,11 @@ const ChatBot:FC =(props:any)=> {
         </div>
     )
 }
-export default ChatBot
+
+
+export default connect(
+    (state:any)=> {
+      const {auth: {isAuth}}= state
+      return {isAuth}
+    },{setAuth}
+  )(ChatBot)

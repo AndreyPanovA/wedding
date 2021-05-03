@@ -1,14 +1,21 @@
 import React from 'react';
 import './App.scss';
-// Pages
-import {Welcome, ChatBot} from "./pages"
+// Components
+import {Navigation} from "./components"
+// Redux
+import store, { persistor } from "./redux";
+import {PersistGate} from 'redux-persist/integration/react';
+import {Provider} from 'react-redux';
 
 function App() {
   return (
-    // <Welcome />
-    <div className="wrapper">
-      <ChatBot />
-    </div>
+    <Provider store={store}>
+         <PersistGate loading={null} persistor={persistor}>
+            <div className="wrapper">
+              <Navigation />
+            </div>
+        </PersistGate>
+    </Provider>
   );
 }
 
