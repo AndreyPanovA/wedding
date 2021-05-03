@@ -5,4 +5,10 @@
     overflow: hidden;
     width: 50%;
     margin: auto;
+    
 }
+@media (max-width: 830px) {
+    .container {
+        width: 100vw !important;
+    }
+  }

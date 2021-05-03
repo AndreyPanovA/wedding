@@ -1,4 +1,5 @@
 @import "../../styles/constants.scss";
+@import "../../styles/mixins.scss";
 .container {
     display: flex;
     flex-direction: column;
@@ -6,16 +7,20 @@
         margin-bottom: 10px;
         color:$label;
     }
-   .input {
-       height: 100%;
-       padding: 10px 20px;
-       background: white;
-       outline: none;
-       border-radius: 10px;
-       border:2px solid white;
-    //    color: white;
-       &:focus {
-        //    color: white;
-       }
-   }
+    .inputContainer {
+        @extend %center;
+        .input {
+            height: 100%;
+            padding: 10px 20px;
+            background: white;
+            outline: none;
+            border-radius: 10px;
+            border:2px solid white;
+            margin-right: 10px;
+            &:focus {
+            }
+        }
+
+    }
+
 }
