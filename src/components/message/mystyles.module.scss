@@ -1,22 +1,20 @@
 @import "../../styles/constants.scss";
 .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-  
+    justify-content: flex-start;
     .siri{
         margin-right: 10px;
-      
     }
     .message{
         padding: 10px 20px;
         border-radius: 10px;
         border-width: 2px;
         border-style: solid;
-        width: 100%;
+        // width: 100%;
         margin-bottom: 15px;
         // min-height: 91px;
+
         &.on {
             background-color: $white;
             border-color: $message; 
@@ -26,8 +24,20 @@
             border-color: $white; 
             .text{
                 color: $white;
+                text-align: left;
             }
         }
+    }
+    .inputContainer {
+            height: 100%;
+            padding: 10px 20px;
+            // background: white;
+            background-color: #333;
+            outline: none;
+            border-radius: 10px;
+            border:2px solid white;
+            margin-right: 10px;
+            color:white;
     }
 }
 

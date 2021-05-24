@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, useState } from "react";
 // Components
 import { Input, Message } from "../../components";
 // Styles
@@ -10,29 +10,60 @@ import data from "../../data"
 import {CUSTOM} from "../../constants"
 // Redux
 import {connect} from "react-redux"
-import {setAuth} from "../../redux/reducers/auth"
+import {setAuth,setUserInfo} from "../../redux/reducers/auth"
 import { withRouter} from "react-router";
 // Navigation
 interface Props  {
     isAuth:boolean,
-    history:any
+    history:any,
+    setAuth:any,
+    userInfo:any, 
+    setUserInfo(obj:object):void
+
 
 }
-const ChatBot:FC<Props> =({isAuth,history})=> {
-    useEffect(()=>{
-        if (!isAuth) {
-            setTimeout(()=>{
+const ChatBot:FC<Props> =({isAuth,history,setAuth,setUserInfo,userInfo})=> {
+    // useEffect(()=>{
+    //     if (isAuth) {
+    //         setTimeout(()=>{
+    //             // history.push("/wellcome")
+    //             history.push("/")
+    //         },1000)
+    //     }  
+    // },[isAuth])
+    const [state, setState]=useState<{p:string}[]>([])
+    const callbacks = {
+        onGetPerson:(person:any)=> {
+            if(!person?.error) {
+                setAuth(true)
                 history.push("/wellcome")
-            },1000)
-        }  
-    },[isAuth])
+                return setUserInfo(person)
+            }
+            setUserInfo(person)
+            setState((prev:any)=>{
+                let arr= [...prev, person]
+                return (arr)
+            })
+           
+            
+       
+        }
+    }
+console.log(state)
     return (
         <div className={cn(cls.container)}>
-            {/* <h1>{JSON.stringify(isAuth)}</h1> */}
             {data.startConverssation.messages.map(({text},idx)=> <Message text={text}/>)}
+            {state.map((el,idx)=> {
+                return( 
+                <>
+                    <Message text={el.p} phone/>
+                    <Message text={data.startConverssation.error}/>
+                </>)
+            })}
             <div style={CUSTOM.center}>
-                <Input />
+                <Input onGetPerson={callbacks.onGetPerson}/>
             </div>
+            {}
         </div>
     )
 }
@@ -40,7 +71,7 @@ const ChatBot:FC<Props> =({isAuth,history})=> {
 
 export default withRouter(connect(
     (state:any)=> {
-      const {auth: {isAuth}}= state
-      return {isAuth}
-    },{setAuth}
+      const {auth: {isAuth, userInfo}}= state
+      return {isAuth,userInfo}
+    },{setAuth,setUserInfo}
   )(ChatBot))

@@ -1,9 +1,17 @@
 import cn from "classnames"
-import React from "react"
+import React, { FC } from "react"
 import {TimeBlockInfo} from "../../components"
 import cls from "./style.module.scss"
 import images from "../../assets"
-const Welcome =(props:any)=> {
+// Redux
+import {connect} from "react-redux"
+import {setAuth,setUserInfo} from "../../redux/reducers/auth"
+import { withRouter} from "react-router";
+interface WelcomeProps  {
+    userInfo:any
+}
+const Welcome:FC<WelcomeProps> =({userInfo})=> {
+
     return (
         <div className={cn(cls.container)}>
             <div className={cls.topImageContainer}>
@@ -11,11 +19,10 @@ const Welcome =(props:any)=> {
                     <img src={images.topMiddle} className={cls.img}/>
                     <img src={images.topRight} className={cls.img}/>
             </div>
-           
             <div className={cls.content}>
                 <h1>Приглашаем вас на нашу свадьбу!</h1>
                 <div>
-                    <h2>Юрий Алексей,</h2>
+                    <h2>{`${userInfo.firstName} ${userInfo.lastName}`}</h2>
                     <h2>будем рады разделить с вами день нашей свадьбы!</h2>
                 </div>
                 <TimeBlockInfo />
@@ -29,4 +36,10 @@ const Welcome =(props:any)=> {
         </div>
     )
 }
-export default Welcome
+
+export default withRouter(connect(
+    (state:any)=> {
+      const {auth: {isAuth, userInfo}}= state
+      return {isAuth,userInfo}
+    },{setAuth,setUserInfo}
+  )(Welcome))

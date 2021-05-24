@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import InputMask from 'react-input-mask';
 // styles
 import cn from "classnames"
@@ -8,26 +8,45 @@ import {InputTarget} from "../../interfaces"
 // icons
 import { FaRegTimesCircle,FaCheck, FaChevronRight } from 'react-icons/fa';
 import { GREEN, RED } from "../../constants";
-const Input =(props:any)=> {
+import data from "../../data"
+interface InputProps {
+    onGetPerson(val:any):void
+}
+const Input:FC<InputProps> =({onGetPerson})=> {
     const [state, setState]=useState("")
     const callbacks ={
         onChangeText:({target:{value}}:InputTarget)=> {
-            console.log(value)           
+            let val=value.split(" ").join("").split("-").join("").split("(").join("").split(")").join("").split("+7").join("")
+            setState(val)
+            if(val.length==10) {
+                let person=data.phones.filter(el=>el.p=="+7".concat(val) || el.ph=="+7".concat(val))
+                if(person.length>0) {
+                    onGetPerson(person[0])
+                }else {
+                    onGetPerson({error:"Нет такого пользователя", p:value})
+                    setState("")
+                }
+            }          
         }
     }
+  
     const auth=false
+    const obj:any={}
     return (
         <div className={cls.container}>
             <label htmlFor="phone">Введите номер телефона ниже</label>
             <div className={cn(cls.inputContainer)}>
                 <InputMask 
+
                     id="phone"
-                    {...props} 
-                    mask="+7 (999)-999-99" 
-                    maskChar=" " 
-                    placeholder="+7 (999)-999-99" 
+                    mask="+7 ( 999 ) - 999 - 99 - 99" 
+             
+                    placeholder="+7 ( 999 ) - 999 - 99 - 99" 
                     className={cls.input}
                     onChange={callbacks.onChangeText}
+                    maskChar={" "} 
+                    {...obj} 
+                    value={state}
                     />
                 {!auth ?<FaCheck  color={GREEN} size={20}/> :
                 <FaRegTimesCircle color={RED} size={20}/>}
