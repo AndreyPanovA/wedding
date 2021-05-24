@@ -2,6 +2,7 @@
 export const RED="#C21D1D"
 export const GREEN="#43CC82"
 export const GREY="#D3D9E3"
+export const PINK="#C2A3CC"
 // Styles
 export const CUSTOM ={
     center: {

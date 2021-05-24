@@ -23,7 +23,7 @@ const TimeText:FC<Props> = ({hours="17", minutes="00", mounth="07",year="2021", 
     return (
         <div className={cn(cls.timeContainer)} >
             <div className={cls.icon}>
-                <Icon color={GREY} size={25}/>
+                <Icon color={GREY} size={35}/>
             </div>
                 {type=="text" ? 
                 <div className={cn(cls.small)}>
@@ -31,7 +31,7 @@ const TimeText:FC<Props> = ({hours="17", minutes="00", mounth="07",year="2021", 
                     <h3>{title?.bottom}</h3>
                 </div>
                 :
-                   <div className={cn(cls.timeContainer)}>
+                <div className={cn(cls.timeContainer)}>
                         <h2>{hours}</h2>
                         <div>
                             {type=="date" ? 
@@ -41,17 +41,24 @@ const TimeText:FC<Props> = ({hours="17", minutes="00", mounth="07",year="2021", 
                             </>:
                             <h2>{`:${minutes}`}</h2>}
                         </div>
-                    </div>}
-             
+                </div>
+                }
         </div>
     )
 }
 const TimeBlockInfo =()=> {
     return (
-        <div className={cn(cls.container)}>
-            <TimeText type="date"/>
-            <TimeText hours={11} />
-            <TimeText type="text" title={{top:"Башня “Око”, Ресторан “Birds”",bottom:"Москва, Первый Красногвардейский проезд, дом 21 стр. 2"}} />
+        <div>
+            <div className={cn(cls.container)}>
+                <TimeText type="date"/>
+                <TimeText hours={11} />
+                <TimeText type="text" title={{top:"Башня “Око”, Ресторан “Birds”", bottom:"Москва, Первый Красногвардейский проезд, дом 21 стр. 2"}} />
+            </div>
+            <div className={cn(cls.container)}>
+                <TimeText type="date" hours={18} />
+                <TimeText hours={15}  />
+                <TimeText type="text" title={{top:"Башня “Око”, Ресторан “Birds”", bottom:"Москва, Первый Красногвардейский проезд, дом 21 стр. 2"}} />
+            </div>
         </div>
     )
 }
