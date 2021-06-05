@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 // Pages
-import {Welcome, ChatBot} from "../../pages"
+import {Welcome, ChatBot, Questions} from "../../pages"
 // Redux
 import {connect} from 'react-redux';
 import {setAuth} from "../../redux/reducers/auth"
@@ -21,6 +21,8 @@ const Navigation:FC<Props> =({isAuth})=> {
   <Router>
       <Route path="/" exact component={ChatBot}/>
       <Route path="/wellcome" exact component={Welcome}/>
+      <Route path="/questions" exact component={Questions}/>
+      
   </Router>
   )
 }

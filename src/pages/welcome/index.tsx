@@ -8,9 +8,10 @@ import {connect} from "react-redux"
 import {setAuth,setUserInfo} from "../../redux/reducers/auth"
 import { withRouter} from "react-router";
 interface WelcomeProps  {
-    userInfo:any
+    userInfo:any,
+    history:any
 }
-const Welcome:FC<WelcomeProps> =({userInfo})=> {
+const Welcome:FC<WelcomeProps> =({userInfo,history})=> {
 
     return (
         <div className={cn(cls.container)}>
@@ -27,12 +28,16 @@ const Welcome:FC<WelcomeProps> =({userInfo})=> {
                 </div>
                 <TimeBlockInfo />
                 <p>Также просим вас заполнить анкету, чтобы мы смогли учесть ваши пожелания.  </p>
-                <div className={cls.questionsContainer}>
+                <div className={cls.questionsContainer} >
              
-                    <div className={cls.questionsContent}>
+                    <div className={cls.questionsContent} onClick={()=>{
+                        history.push("/questions")
+                    }}>
                         <div className={cls.siriQuestion}>
                             <PanovSiri />
-                            <div className={cls.questionChat}>
+                            <div className={cls.questionChat} onClick={()=>{
+                                return null
+                            }}>
                                 <div className={cls.question}>
                                     <p>У вас остались вопросы?</p>
                                 </div>

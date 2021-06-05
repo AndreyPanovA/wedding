@@ -49,7 +49,7 @@ const ChatBot:FC<Props> =({isAuth,history,setAuth,setUserInfo,userInfo})=> {
        
         }
     }
-console.log(state)
+
     return (
         <div className={cn(cls.container)}>
             {data.startConverssation.messages.map(({text},idx)=> <Message text={text}/>)}
