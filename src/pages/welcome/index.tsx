@@ -12,14 +12,14 @@ interface WelcomeProps  {
     history:any
 }
 const Welcome:FC<WelcomeProps> =({userInfo,history})=> {
-    console.log(userInfo)
+
 
     return (
         <div className={cn(cls.container)}>
             <div className={cls.topImageContainer}>
-                    <img src={images.topLeft} className={cls.img}/>
-                    <img src={images.topMiddle} className={cls.img}/>
-                    <img src={images.topRight} className={cls.img}/>
+                    <img src={images.topLeft} className={cls.img} alt=""/>
+                    <img src={images.topMiddle} className={cls.img} alt=""/>
+                    <img src={images.topRight} className={cls.img} alt=""/>
             </div>
             <div className={cls.content}>
                 <p className={cls.title}>Приглашаем вас на нашу свадьбу!</p>
@@ -54,9 +54,9 @@ const Welcome:FC<WelcomeProps> =({userInfo,history})=> {
                 </div>
             </div>
             <div className={cls.bottomImageContainer}>
-                    <img src={images.bottomLeft} className={cls.img}/>
-                    <img src={images.bottomMiddle} className={cls.img}/>
-                    <img src={images.bottomRight} className={cls.img}/>
+                    <img src={images.bottomLeft} className={cls.img} alt=""/>
+                    <img src={images.bottomMiddle} className={cls.img} alt=""/>
+                    <img src={images.bottomRight} className={cls.img} alt=""/>
             </div>
         </div>
     )

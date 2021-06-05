@@ -7,9 +7,9 @@ import {setAuth} from "../../redux/reducers/auth"
 // Navigation
 import {
   BrowserRouter as Router,
-  Switch,
+  
   Route,
-  Link
+
 } from "react-router-dom";
 // Styles
 import '../../App.scss';

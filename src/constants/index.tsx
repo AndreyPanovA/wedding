@@ -7,7 +7,7 @@ export const PINK="#C2A3CC"
 export const CUSTOM ={
     center: {
         display:"flex",
-        ["flex-direction"]:"column",
+        // ["flex-direction"]:"column",
         justifyContent:"center",
         alignItems:"center", 
     }, 
@@ -17,19 +17,19 @@ export const CUSTOM ={
     },
     centerRow: {
         display:"flex",
-        ["flex-direction"]:'row',
+        // ["flex-direction"]:'row',
         alignItems:"center", 
         justifyContent:"center"
     },
     centerRowWrap: {
-        ["flex-direction"]:'row',
+        // ["flex-direction"]:'row',
         alignItems:"center", 
         justifyContent:"center", 
         flexWrap:"wrap"
     },
     betweenRow: {
         display:"flex",
-        ["flex-direction"]:'row',
+        // ["flex-direction"]:'row',
         alignItems:"center", 
         justifyContent:"space-between", 
     }, 
@@ -40,10 +40,11 @@ export const CUSTOM ={
         resizeMode: "cover",
     },
 }
-export default {
+const data=  {
     // Colors
     RED,
     GREEN,
     // Styles
     CUSTOM
 }
+export default data

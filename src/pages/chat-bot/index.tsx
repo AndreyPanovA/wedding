@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC,  useState } from "react";
 // Components
 import { Input, Message } from "../../components";
 // Styles
@@ -54,13 +54,13 @@ const ChatBot:FC<Props> =({isAuth,history,setAuth,setUserInfo,userInfo})=> {
 
     return (
         <div className={cn(cls.container)}>
-            {data.startConverssation.messages.map(({text},idx)=> <Message text={text}/>)}
+            {data.startConverssation.messages.map(({text},idx)=> <div key={idx}><Message text={text} idx={idx}/></div>)}
             {state.map((el,idx)=> {
                 return( 
-                <>
-                    <Message text={el.p} phone/>
-                    <Message text={data.startConverssation.error}/>
-                </>)
+                <div key={idx}>
+                    <Message text={el.p} phone idx={idx}/>
+                    <Message text={data.startConverssation.error} idx={idx}/>
+                </div>)
             })}
             <div style={CUSTOM.center}>
                 <Input onGetPerson={callbacks.onGetPerson}/>

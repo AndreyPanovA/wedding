@@ -1,15 +1,3 @@
-import { userInfo } from "node:os";
-import {batch} from "react-redux";
-import ConstantType from "../constant-type";
-// import API from "../../../../../Socol/Auto1/automate-mobile/src/axios"
-
-
-const helper ={}
-const {
-    SET_TOKEN, SET_REFRESH_TOKEN, RESET_TOKENS, CHECK_COMPLETED, AUTH_SUCCESS, SET_CODEID, SET_MESSAGE,
-    SET_IS_SUCCESS, SET_TOKEN_RG, SET_REFRESH_TOKEN_RG, SET_IS_PRELOAD,
-    SET_PHONE_NUMBER, SET_PASSWORD, SET_FIO
-} = ConstantType;
 
 const SET_FIRST_ENTER ="auth/SET_FIRST_ENTER"
 const SET_USER_INFO="auth/SET_USER_INFO"

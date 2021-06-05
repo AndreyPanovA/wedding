@@ -5,7 +5,7 @@ import {Navigation} from "./components"
 // Redux
 import store, { persistor } from "./redux";
 import {PersistGate} from 'redux-persist/integration/react';
-import {Provider, useSelector} from 'react-redux';
+import {Provider} from 'react-redux';
 
 function App() {
 

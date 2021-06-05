@@ -1,16 +1,17 @@
 import React, { FC } from "react"
-import { FaCheck, FaRegTimesCircle } from "react-icons/fa";
+import { FaRegTimesCircle } from "react-icons/fa";
 import { RED } from "../../constants";
 import PanovSiri from "../panov-siri";
 import cls from  './mystyles.module.scss';
 interface Props {
     text:string,
-    phone?:boolean
+    phone?:boolean,
+    idx:any
 }
-const Message:FC<Props> =({text="",phone=false})=> {
+const Message:FC<Props> =({text="",phone=false, idx})=> {
     if(phone) {
         return (
-             <div className={cls.container}>
+             <div className={cls.container} key={idx}>
                  <div className={cls.container} style={{marginBottom:20}}>
                     <div className={cls.inputContainer} >
                         <p>{text}</p>
@@ -21,7 +22,7 @@ const Message:FC<Props> =({text="",phone=false})=> {
         )
     }
     return (
-        <div className={cls.container}>
+        <div className={cls.container} key={idx}>
             <div className={cls.siri}>
                 <PanovSiri />
             </div>

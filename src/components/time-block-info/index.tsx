@@ -6,7 +6,7 @@ import cn from "classnames"
 import { IoCalendarOutline } from "react-icons/io5"
 import {WiTime4, BsGeoAlt} from "react-icons/all"
 
-import { CUSTOM, GREY } from "../../constants"
+import {  GREY } from "../../constants"
 interface Props {
     hours?:number | string, 
     minutes?:number | string,
@@ -20,14 +20,14 @@ interface Props {
     href?:string
 }
 const TimeText:FC<Props> = ({hours="17", minutes="00", mounth="07",year="2021", type="time", title, href="https://yandex.ru/maps/-/CCUaNRQ~GC"})=> {
-    const Icon =type=="date" ? IoCalendarOutline :type=="time" ? WiTime4:BsGeoAlt
+    const Icon =type==="date" ? IoCalendarOutline :type==="time" ? WiTime4:BsGeoAlt
     return (
         <div className={cn(cls.timeContainer)}>
             <div className={cls.timeContainerWrapper}>
                 <div className={cls.icon}>
                     <Icon color={GREY} size={35}/>
                 </div>
-                    {type=="text" ? 
+                    {type==="text" ? 
                     <div className={cn(cls.small)}>
                         <h3>{title?.top}</h3>
                         <a href={href} className={cls.a}>{title?.bottom}</a>
@@ -36,7 +36,7 @@ const TimeText:FC<Props> = ({hours="17", minutes="00", mounth="07",year="2021", 
                     <div className={cn(cls.timeContainer)}>
                             <h2>{hours}</h2>
                             <div>
-                                {type=="date" ? 
+                                {type==="date" ? 
                                 <>
                                     <p>{mounth}</p>
                                     <p>{year}</p>
