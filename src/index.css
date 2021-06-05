@@ -17,10 +17,12 @@ code {
   padding: 0;
   box-sizing: border-box;
 }
-body {
+
+html,body, .root {
   font-family: 'Montserrat', sans-serif;
-  font-size: 28px;
+  font-size: 1em;
   line-height: 36px;
+  min-height: 100vh;
 }
 input {
   font-family: 'Montserrat', sans-serif;
