@@ -7,6 +7,44 @@
    flex-direction: column;
    min-height: 100vh;
    padding: 20px;
+   background: #FEC8E4;
+   background: -webkit-linear-gradient(top left, #FEC8E4, #4CBEE4);
+   background: -moz-linear-gradient(top left, #FEC8E4, #4CBEE4);
+   background: linear-gradient(to bottom right, #FEC8E4, #4CBEE4);
+   .goBack {
+       position: absolute;
+       top:10px;
+       padding: 10px 20px;
+       border-radius: 20px;
+
+       background-color: #333;
+
+       border-radius: 63px;
+       background: linear-gradient(145deg, #f0f0f0, #cacaca);
+       box-shadow:  5px 5px 10px #5c5c5c,
+                    -5px -5px 10px #ffffff;
+   
+
+
+        p {
+            // font-size: 44px;
+            // line-height: 44px;
+            color:black
+        }
+        // transition: 0.1s ease-in-out;
+        &:hover {
+            background-color: white;
+            border:2px solid #333;
+            cursor: pointer;
+      
+                         background: #e0e0e0;
+                         box-shadow: inset 5px 5px 10px #5c5c5c,
+                                     inset -5px -5px 10px #ffffff;
+            p {
+                color:black
+            }
+        }
+   }
 
 
 //    

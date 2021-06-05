@@ -27,12 +27,18 @@ const Questions:FC<Props> =({isAuth,history,setAuth,setUserInfo,userInfo})=> {
     const callbacks = {
         onClick:(text:string)=>{
             setState(text)
+        },
+        goBack:()=>{
+            history.goBack()
         }
       
     }
 
     return (
         <div className={cn(cls.container)}>
+            <div onClick={callbacks.goBack} className={cls.goBack}>
+                <p>{"<- назад" }</p>
+            </div>
             {data.questionsPreview.messages.map(({text},idx)=> <Message text={text}/>)}
             <div className={cls.questions}>
                 {data.questionsPreview.questions.quesstion.map(({text, answer}, idx)=>{
@@ -43,9 +49,6 @@ const Questions:FC<Props> =({isAuth,history,setAuth,setUserInfo,userInfo})=> {
                     )
                 })}
             </div>
-            {/* <div>
-                <p>{state}</p>
-            </div> */}
             <Message text={state}/>
       
         </div>

@@ -18,12 +18,13 @@ interface Props {
 }
 const Navigation:FC<Props> =({isAuth})=> {
   return(
-  <Router>
-      <Route path="/" exact component={ChatBot}/>
-      <Route path="/wellcome" exact component={Welcome}/>
-      <Route path="/questions" exact component={Questions}/>
-      
-  </Router>
+    <div className={`wrapper  ${isAuth && "activeBackground"}`}> 
+      <Router>
+          <Route path="/" exact component={ChatBot}/>
+          <Route path="/wellcome" exact component={Welcome}/>
+          <Route path="/questions" exact component={Questions}/>
+      </Router>
+    </div>
   )
 }
 

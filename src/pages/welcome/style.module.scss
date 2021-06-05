@@ -6,6 +6,9 @@
    justify-content: center;
    flex-direction: column;
    min-height: 100vh;
+   background-color: #fafafa;
+//    background: #e4dce0;
+ 
    .questionsContainer {
        display: flex;
        align-items: center;
@@ -55,6 +58,7 @@
         font-weight: bold;
         font-size: 50px;
         line-height: 61px;
+        // color:white
     }
     h2 {
         text-align: center;
@@ -79,6 +83,7 @@
         img {
             height: 20vw;
             width: 30vw;
+            opacity: 0.8;
             &:nth-child(1) {
                 top:0;
                 left:0;
@@ -108,6 +113,7 @@
         img {
             height: 20vw;
             width: 30vw;
+            opacity: 0.8;
             &:nth-child(1) {
                 position: absolute;
                 bottom:0;
