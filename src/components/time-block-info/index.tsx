@@ -57,7 +57,7 @@ const TimeBlockInfo =()=> {
             <div className={cn(cls.container)}>
                 <TimeText type="date" hours={18} />
                 <TimeText hours={15}  />
-                <TimeText type="text" title={{top:"Башня “Око”, Ресторан “Birds”", bottom:"Москва, Первый Красногвардейский проезд, дом 21 стр. 2"}} />
+                <TimeText type="text" title={{top:"Загородный дом “Fisherix”", bottom:"Москва, Посёлок “Щаповское”, улица Евгения Родионова, вл. 7, ГК “Fisherix”"}} />
             </div>
         </div>
     )

@@ -18,19 +18,28 @@ code {
   box-sizing: border-box;
 }
 
+
 html,body, .root {
   font-family: 'Montserrat', sans-serif;
   font-size: 1em;
   line-height: 36px;
   min-height: 100vh;
+  /* font-family: 'Cormorant Infant', serif; */
+  font-family: 'Cormorant Infant', serif;
+  font-style: normal;
+  
 }
 input {
   font-family: 'Montserrat', sans-serif;
   font-size: 28px;
   line-height: 36px;
+  font-family: 'Cormorant Infant', serif;
+  font-style: normal;
 }
 label {
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   line-height: 21px;
+  font-family: 'Cormorant Infant', serif;
+  font-style: normal;
 }
