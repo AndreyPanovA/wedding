@@ -6,6 +6,40 @@
    justify-content: center;
    flex-direction: column;
    min-height: 100vh;
+   .questionsContainer {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       position: relative;
+       z-index: 1000;
+       .questionsContent {
+    
+        .siriQuestion {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+
+        }
+        .question {
+            padding: 0px 20px;
+            border:2px solid $pink;
+            border-radius: 15px;
+            position: relative;
+            margin: 20px 0px;
+        
+            &:last-child {
+                margin-left: 35px;
+                background-color: #E2F6FF;
+                opacity: 0.5;
+            }
+            p {
+
+            }
+        }
+       }
+   }
+
+//    
     .title {
         margin-bottom: 10px;
         font-size: 50px;
@@ -31,7 +65,7 @@
     }
     .content {
         padding: 0px 20px;
-        max-width: 70vw;
+        max-width: 1040px;
         margin: auto;
     }
     .topImageContainer {
@@ -96,3 +130,19 @@
     }
   
 }
+
+@media (max-width: 970px) { 
+    .content {
+        width: 100vw !important;
+    }
+
+}
+@media (max-width: 540px) { 
+    h2 {
+      font-size: 25px !important;
+    }
+    .title {
+        font-size: 25px !important;
+    }
+  
+  }

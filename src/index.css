@@ -29,6 +29,9 @@ html,body, .root {
   font-style: normal;
   
 }
+p{
+  font-size: 24px;
+}
 input {
   font-family: 'Montserrat', sans-serif;
   font-size: 28px;
@@ -42,4 +45,11 @@ label {
   line-height: 21px;
   font-family: 'Cormorant Infant', serif;
   font-style: normal;
+}
+
+@media (max-width: 540px) { 
+  p {
+    font-size: 18px;
+  }
+
 }

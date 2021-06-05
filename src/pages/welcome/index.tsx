@@ -1,6 +1,6 @@
 import cn from "classnames"
 import React, { FC } from "react"
-import {TimeBlockInfo} from "../../components"
+import {PanovSiri, TimeBlockInfo} from "../../components"
 import cls from "./style.module.scss"
 import images from "../../assets"
 // Redux
@@ -27,6 +27,25 @@ const Welcome:FC<WelcomeProps> =({userInfo})=> {
                 </div>
                 <TimeBlockInfo />
                 <p>Также просим вас заполнить анкету, чтобы мы смогли учесть ваши пожелания.  </p>
+                <div className={cls.questionsContainer}>
+             
+                    <div className={cls.questionsContent}>
+                        <div className={cls.siriQuestion}>
+                            <PanovSiri />
+                            <div className={cls.questionChat}>
+                                <div className={cls.question}>
+                                    <p>У вас остались вопросы?</p>
+                                </div>
+                                <div className={cls.question}>
+                                    <p>Да, покажи список частых вопросов.</p>
+                                </div>
+                            </div>
+                          
+                            
+                        </div>
+                      
+                    </div>
+                </div>
             </div>
             <div className={cls.bottomImageContainer}>
                     <img src={images.bottomLeft} className={cls.img}/>
