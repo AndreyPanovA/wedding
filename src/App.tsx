@@ -19,5 +19,7 @@ function App() {
     </Provider>
   );
 }
+  // // "start": "react-scripts start",
+  // "build": "react-scripts build",
 
 export default App;

@@ -39,7 +39,7 @@ const Questions:FC<Props> =({history})=> {
             <div onClick={callbacks.goBack} className={cls.goBack}>
                 <p>{"<- назад" }</p>
             </div>
-            {data.questionsPreview.messages.map(({text},idx)=> <Message text={text} idx={idx}/>)}
+            {data.questionsPreview.messages.map(({text},idx)=> <div key={idx}><Message text={text} idx={idx}/></div>)}
             <div className={cls.questions}>
                 {data.questionsPreview.questions.quesstion.map(({text, answer}, idx)=>{
                     return (
