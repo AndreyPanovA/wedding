@@ -1,10 +1,10 @@
 import React, { FC, useRef, useState } from "react";
-import InputMask from 'react-input-mask';
+// import InputMask from 'react-input-mask';
 // styles
 import cn from "classnames"
 import cls from "./style.module.scss"
 // interfaces
-import {InputTarget} from "../../interfaces"
+// import {InputTarget} from "../../interfaces"r
 // icons
 import { FaRegTimesCircle,FaCheck, } from 'react-icons/fa';
 import { GREEN, RED } from "../../constants";
@@ -48,7 +48,7 @@ const Input:FC<InputProps> =({onGetPerson})=> {
             } 
         },
         del:(event:any)=>{
-            if(event.keyCode==8) {
+            if(event.keyCode===8) {
                 setState(prev=>(""))
             }
              
@@ -56,7 +56,7 @@ const Input:FC<InputProps> =({onGetPerson})=> {
     }
   
     const auth=false
-    const obj:any={}
+    // const obj:any={}
     let refer=useRef(null)
     
     return (
