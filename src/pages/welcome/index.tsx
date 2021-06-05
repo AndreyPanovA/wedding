@@ -12,6 +12,7 @@ interface WelcomeProps  {
     history:any
 }
 const Welcome:FC<WelcomeProps> =({userInfo,history})=> {
+    console.log(userInfo)
 
     return (
         <div className={cn(cls.container)}>
@@ -23,7 +24,7 @@ const Welcome:FC<WelcomeProps> =({userInfo,history})=> {
             <div className={cls.content}>
                 <p className={cls.title}>Приглашаем вас на нашу свадьбу!</p>
                 <div>
-                    <h2>{`${userInfo.firstName} ${userInfo.lastName}`}</h2>
+                    <h2>{`${userInfo.firstName} ${userInfo.lastName} ${userInfo.status}`}</h2>
                     <h2>будем рады разделить с вами день нашей свадьбы!</h2>
                 </div>
                 <TimeBlockInfo />

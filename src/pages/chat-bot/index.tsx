@@ -33,12 +33,14 @@ const ChatBot:FC<Props> =({isAuth,history,setAuth,setUserInfo,userInfo})=> {
     // },[isAuth])
     const [state, setState]=useState<{p:string}[]>([])
     const callbacks = {
-        onGetPerson:(person:any)=> {
+        onGetPerson:async (person:any)=> {
             if(!person?.error) {
                 setAuth(true)
-                history.push("/wellcome")
-                return setUserInfo(person)
+              
+                await setUserInfo(person)
+                return history.push("/wellcome")
             }
+            console.log("persson", person)
             setUserInfo(person)
             setState((prev:any)=>{
                 let arr= [...prev, person]
@@ -63,7 +65,6 @@ const ChatBot:FC<Props> =({isAuth,history,setAuth,setUserInfo,userInfo})=> {
             <div style={CUSTOM.center}>
                 <Input onGetPerson={callbacks.onGetPerson}/>
             </div>
-            {}
         </div>
     )
 }

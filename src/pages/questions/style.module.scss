@@ -34,7 +34,7 @@
         // transition: 0.1s ease-in-out;
         &:hover {
             background-color: white;
-            border:2px solid #333;
+            border:2px solid transparent;
             cursor: pointer;
       
                          background: #e0e0e0;
@@ -142,12 +142,20 @@
       justify-content: center;
       flex-wrap: wrap;
       .question {
+          position: relative;
+          z-index: 1000;
           border-radius: 20px;
           padding: 5px 20px;
-          border:2px solid $pink;
+        //   border:2px solid $pink;
           margin: 10px;
-          background-color: #E4FDFF;
+        //   background-color: #E4FDFF;
+          background: linear-gradient(145deg, #f0f0f0, $pink);
+          box-shadow:  5px 5px 10px #5c5c5c,
+                       -5px -5px 10px #ffffff;
+                              
+          
       }
+      
   }
 }
 

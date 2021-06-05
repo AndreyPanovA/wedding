@@ -21,6 +21,7 @@ const Input:FC<InputProps> =({onGetPerson})=> {
             if(val.length==10) {
                 let person=data.phones.filter(el=>el.p=="+7".concat(val) || el.ph=="+7".concat(val))
                 if(person.length>0) {
+                   
                     onGetPerson(person[0])
                 }else {
                     onGetPerson({error:"Нет такого пользователя", p:value})
@@ -32,6 +33,7 @@ const Input:FC<InputProps> =({onGetPerson})=> {
   
     const auth=false
     const obj:any={}
+    console.log("person[0]1",data.phones[1])
     return (
         <div className={cls.container}>
             <label htmlFor="phone">Введите номер телефона ниже</label>
