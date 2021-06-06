@@ -1,31 +1,50 @@
 @import "../../styles/constants.scss";
 @import "../../styles/mixins.scss";
 .container {
+    // height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
  
+    position: fixed;
+    bottom: 25px;
+    max-width: 80%;
+    margin: auto;
+    margin-top: 10vh;
+    .send {
+        @include shad;
+        background-color: white;
+        width: 60px;
+        height: 50px;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
     label {
         margin-bottom: 10px;
         color:$label;
     }
     .inputContainer {
         @extend %center;
-        
         .input {
             height: 100%;
             padding: 10px 20px;
+            width: 100%;
             // background: white;
             background-color: #333;
             outline: none;
             border-radius: 10px;
-            border:2px solid white;
+            border: none;
             margin-right: 10px;
-            color:white;
+            color:#333;
+            @include shadInner;
             &:focus {
-                color:white
+                color:#333
             }
             &:active {
-                color: white;
+                color: #333;
             }
 
         }

@@ -6,10 +6,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border:3px solid $pink;
+    // border:3px solid $pink;
     border-radius: 15px;
     padding: 10px 20px;
     flex-wrap: wrap;
+    @include shad;
+    overflow: hidden;
     .timer {
         display: flex;
         justify-content: center;
@@ -32,6 +34,7 @@
             align-items: center;
             margin-bottom: 10px;
             justify-content: center;
+        
             width: 100%;
         }
 
@@ -42,16 +45,19 @@
             width: 35px;
             height: 35px;
             margin-right: 10px;
+            margin-left: 10px;
         } 
     }
     h2{
         font-size: 60px;
         margin-right: 10px;
+        white-space: nowrap;
     }
     h3 {
         font-size: 25px;
         line-height: 30px;
         font-family: "pro";
+        margin: 10px;
         &:last-child {
             color: #388AAD;
         }
@@ -86,15 +92,18 @@
 
 @media (max-width: 440px) { 
     .timer {
-        flex-direction: column;
+        // flex-direction: column;
         // width: 100%;
 
     }
    
     .container {
         .timeContainer {
+            h2,p {
+                font-size: 15px !important;
+            }
             h3, a {
-                font-size: 20px !important;
+                font-size: 15px !important;
             }
         }
   

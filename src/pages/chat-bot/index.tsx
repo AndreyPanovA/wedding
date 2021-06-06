@@ -40,20 +40,18 @@ const ChatBot:FC<Props> =({isAuth,history,setAuth,setUserInfo,userInfo})=> {
                 await setUserInfo(person)
                 return history.push("/wellcome")
             }
-            console.log("persson", person)
             setUserInfo(person)
             setState((prev:any)=>{
                 let arr= [...prev, person]
                 return (arr)
             })
            
-            
-       
         }
     }
 
     return (
         <div className={cn(cls.container)}>
+            <div className={cls.chat}>
             {data.startConverssation.messages.map(({text},idx)=> <div key={idx}><Message text={text} idx={idx}/></div>)}
             {state.map((el,idx)=> {
                 return( 
@@ -62,7 +60,8 @@ const ChatBot:FC<Props> =({isAuth,history,setAuth,setUserInfo,userInfo})=> {
                     <Message text={data.startConverssation.error} idx={idx}/>
                 </div>)
             })}
-            <div style={CUSTOM.center}>
+            </div>
+            <div className={cls.input}>
                 <Input onGetPerson={callbacks.onGetPerson}/>
             </div>
         </div>

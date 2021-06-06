@@ -6,7 +6,7 @@ import cn from "classnames"
 import { IoCalendarOutline } from "react-icons/io5"
 import {WiTime4, BsGeoAlt} from "react-icons/all"
 
-import {  GREY } from "../../constants"
+import {  GREY, PINK } from "../../constants"
 interface Props {
     hours?:number | string, 
     minutes?:number | string,
@@ -19,13 +19,16 @@ interface Props {
     },
     href?:string
 }
+interface TimeProps {
+    userInfo:any
+}
 const TimeText:FC<Props> = ({hours="17", minutes="00", mounth="07",year="2021", type="time", title, href="https://yandex.ru/maps/-/CCUaNRQ~GC"})=> {
     const Icon =type==="date" ? IoCalendarOutline :type==="time" ? WiTime4:BsGeoAlt
     return (
         <div className={cn(cls.timeContainer)}>
             <div className={cls.timeContainerWrapper}>
                 <div className={cls.icon}>
-                    <Icon color={GREY} size={35}/>
+                    <Icon color={PINK} size={25} />
                 </div>
                     {type==="text" ? 
                     <div className={cn(cls.small)}>
@@ -41,7 +44,7 @@ const TimeText:FC<Props> = ({hours="17", minutes="00", mounth="07",year="2021", 
                                     <p>{mounth}</p>
                                     <p>{year}</p>
                                 </>:
-                                <h2>{`:${minutes}`}</h2>}
+                                <h2>{`: ${minutes}`}</h2>}
                             </div>
                     </div>
                     }
@@ -49,10 +52,11 @@ const TimeText:FC<Props> = ({hours="17", minutes="00", mounth="07",year="2021", 
         </div>
     )
 }
-const TimeBlockInfo =()=> {
+
+const TimeBlockInfo:FC<TimeProps> =({userInfo})=> {
     return (
         <div>
-            <div className={cn(cls.container)}>
+           {userInfo?.full && <div className={cn(cls.container)}>
                 <div className={cls.timer}>
                     <TimeText type="date"/>
                     <TimeText hours={11} />
@@ -60,7 +64,7 @@ const TimeBlockInfo =()=> {
                 <TimeText type="text" title={{top:"Башня “Око”, Ресторан “Birds”", bottom:"Москва, Первый Красногвардейский проезд, дом 21 стр. 2"}} 
                     href="https://yandex.ru/maps/-/CCUaNRQ~GC"
                 />
-            </div>
+            </div> }
             <div className={cn(cls.container)}>
                 <div className={cls.timer}>
                     <TimeText type="date" hours={18} />

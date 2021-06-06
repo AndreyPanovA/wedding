@@ -54,7 +54,8 @@ const bot={
             ph:"+79011888378",
             firstName:"Андрей",
             lastName:"Панов",
-            status:"Жених"
+            status:"Жених",
+            full:true
         },
         {
             p:"+79268979607",
@@ -70,22 +71,27 @@ const bot={
             p:"+79261887955",
             firstName:"Валентина",
             lastName:"Владимировна",
+            full:true
         },{
             p:"+79055187000",
             firstName:"Радий",
             lastName:"Мугтасимович",
+            full:true
         },{
             p:"+79636205454",
             firstName:"Ирина",
             lastName:"Анатольевна",
+            full:true
         },{
             p:"+79685205454",
             firstName:"Александр",
             lastName:"Валериевич",
+            full:true
         },{
             p:"+79157998554",
             firstName:"Вадим",
             lastName:"Диденко",
+            
         },{
             p:"+79651394444",
             firstName:"Валерий",
@@ -138,11 +144,13 @@ const bot={
             p:"+79250414150",
             firstName:"Юрий-Алексей",
             lastName:"Баринов",
+            full:true
         },
         {
             p:"+79771631019",
             firstName:"любимая",
             lastName:"Невеста",
+            full:true
         },{
             p:"+79688822682",
             firstName:"Наталья",
@@ -176,7 +184,8 @@ const bot={
             p:"+79162356303",
             firstName:"Вера",
             lastName:"Николаевна",
-            status:"и Анатолий Иванович"
+            status:"и Анатолий Иванович",
+            full:true
         },{
             p:"+79160238844",
             firstName:"Петр",

@@ -1,39 +1,44 @@
 @import "../../styles/constants.scss";
+@import "../../styles/mixins.scss";
 .container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    margin: 0px 20px;
+    
     .siri{
         margin-right: 10px;
     }
     .message{
         padding: 10px 20px;
         border-radius: 10px;
-        border-width: 1.5px;
-        border-style: solid;
+
         margin-bottom: 15px;
+        @include shad;
+     
         &.on {
-            background-color: $white;
-            border-color: $message; 
+            background-color: #333;
+            // border-color: $message; 
         }
         &.out{
             background-color: $message;
-            border-color: $white; 
+      
             .text{
-                color: $white;
+                color: #333;
                 text-align: left;
             }
         }
     }
     .inputContainer {
+            @include shad;
             height: 100%;
             padding: 10px 20px;
             background-color: #333;
             outline: none;
             border-radius: 10px;
-            border:2px solid white;
+
             margin-right: 10px;
-            color:white;
+            color:#333;
     }
 }
 
