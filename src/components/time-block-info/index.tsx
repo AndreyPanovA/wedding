@@ -70,7 +70,7 @@ const TimeBlockInfo:FC<TimeProps> =({userInfo})=> {
                     <TimeText type="date" hours={18} />
                     <TimeText hours={15}  />
                 </div>
-                <TimeText type="text" title={{top:"Загородный дом “Fisherix”", bottom:"Москва, Посёлок “Щаповское”, улица Евгения Родионова, вл. 7, ГК “Fisherix”"}} 
+                <TimeText type="text" title={{top:"Загородный парк-отель “Fisherix”", bottom:"Москва, Посёлок “Щаповское”, улица Евгения Родионова, вл. 7, ГК “Fisherix”"}} 
                 href="https://yandex.ru/maps/-/CCUaNRWR8D"
                 />
             </div>
