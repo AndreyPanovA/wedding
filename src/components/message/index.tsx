@@ -8,9 +8,11 @@ interface Props {
     text:string,
     phone?:boolean,
     idx:any,
-    blue?:boolean
+    blue?:boolean,
+    link?:boolean
 }
-const Message:FC<Props> =({text="",phone=false, idx, blue})=> {
+const Message:FC<Props> =({text="",phone=false, idx, blue, link})=> {
+
     if(phone) {
         return (
              <div className={cls.container} key={idx}>
@@ -30,7 +32,7 @@ const Message:FC<Props> =({text="",phone=false, idx, blue})=> {
             </div>
             {/* cls.message+" "+cls.out */}
             <div className={cn(cls.message, cls.out, blue && cls.blue)}>
-                <p className={cls.text}>{text}</p>
+                {link ? <a className={cls.link}  href={"https://forms.gle/G8vCG8oC79BCgdyZ6"}> Ссылка на форму</a> : <p className={cls.text}>{text}</p>}
             </div>
         </div>
     )
