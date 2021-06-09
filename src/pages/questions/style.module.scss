@@ -11,10 +11,14 @@
    background: -webkit-linear-gradient(top left, #FEC8E4, #4CBEE4);
    background: -moz-linear-gradient(top left, #FEC8E4, #4CBEE4);
    background: linear-gradient(to bottom right, #FEC8E4, #4CBEE4);
+   .innerContainer {
+     
+    //  overflow: auto;
+   }
    .goBack {
-       position: absolute;
-       top:38px;
-       left:38px;
+    //    position: absolute;
+    max-width: 100px;
+    margin-bottom: 15px;
        padding: 10px 20px;
        border-radius: 20px;
 

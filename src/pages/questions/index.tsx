@@ -48,17 +48,19 @@ const Questions:FC<Props> =({history})=> {
             <div onClick={callbacks.goBack} className={cls.goBack}>
                 <p style={{display:"flex", alignItems:"center"}}> <FaArrowLeft color={PINK} />{"Назад" }</p>
             </div>
-            {data.questionsPreview.messages.map(({text},idx)=> <div key={idx}><Message text={text} idx={idx}/></div>)}
-            <div className={cls.questions}>
-                {data.questionsPreview.questions.quesstion.map(({text, answer, tag}, idx)=>{
-                    return (
-                        <div className={cls.question} key={idx} onClick={callbacks.onClick.bind(this,answer, tag ? true:false)}>
-                            <p>{text}</p>
-                        </div>
-                    )
-                })}
+            <div className={cls.innerContainer}>
+                {data.questionsPreview.messages.map(({text},idx)=> <div key={idx}><Message text={text} idx={idx}/></div>)}
+                <div className={cls.questions}>
+                    {data.questionsPreview.questions.quesstion.map(({text, answer, tag}, idx)=>{
+                        return (
+                            <div className={cls.question} key={idx} onClick={callbacks.onClick.bind(this,answer, tag ? true:false)}>
+                                <p>{text}</p>
+                            </div>
+                        )
+                    })}
+                </div>
+                {state && <Message text={state} idx={"cool"} link={link} />}
             </div>
-            {state && <Message text={state} idx={"cool"} link={link} />}
         </div>
     )
 }

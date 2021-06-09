@@ -24,7 +24,7 @@ const Welcome:FC<WelcomeProps> =({userInfo,history})=> {
             <div className={cls.content}>
                 <p className={cls.title}>Приглашаем вас на нашу свадьбу!</p>
                 <div>
-                    <h2>{`${userInfo.firstName} ${userInfo.lastName}, ${userInfo.status ? userInfo.status :""}`}</h2>
+                    <h2>{`${userInfo.firstName} ${userInfo.lastName} ${userInfo.status ? userInfo.status :""}`}</h2>
                     <h2>будем рады разделить с вами этот важныый день!</h2>
                 </div>
                 <TimeBlockInfo userInfo={userInfo} />
