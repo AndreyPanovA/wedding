@@ -3,12 +3,14 @@ import { FaRegTimesCircle } from "react-icons/fa";
 import { RED } from "../../constants";
 import PanovSiri from "../panov-siri";
 import cls from  './mystyles.module.scss';
+import cn from "classnames"
 interface Props {
     text:string,
     phone?:boolean,
-    idx:any
+    idx:any,
+    blue?:boolean
 }
-const Message:FC<Props> =({text="",phone=false, idx})=> {
+const Message:FC<Props> =({text="",phone=false, idx, blue})=> {
     if(phone) {
         return (
              <div className={cls.container} key={idx}>
@@ -26,7 +28,8 @@ const Message:FC<Props> =({text="",phone=false, idx})=> {
             <div className={cls.siri}>
                 <PanovSiri />
             </div>
-            <div className={cls.message+" "+cls.out}>
+            {/* cls.message+" "+cls.out */}
+            <div className={cn(cls.message, cls.out, blue && cls.blue)}>
                 <p className={cls.text}>{text}</p>
             </div>
         </div>

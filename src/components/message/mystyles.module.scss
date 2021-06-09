@@ -15,6 +15,9 @@
 
         margin-bottom: 15px;
         @include shad;
+        &.blue {
+            @include shadBlue;
+        }
      
         &.on {
             background-color: #333;

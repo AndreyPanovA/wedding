@@ -6,7 +6,7 @@ import cls from "./style.module.scss"
 // interfaces
 import {InputTarget} from "../../interfaces"
 // icons
-import { FaRegTimesCircle,FaCheck,FaFacebookMessenger } from 'react-icons/fa';
+import { FaRegTimesCircle, FaTelegram, FaSms } from 'react-icons/fa';
 import { GREEN, PINK, RED } from "../../constants";
 import data from "../../data"
 interface InputProps {
@@ -70,7 +70,6 @@ const Input:FC<InputProps> =({onGetPerson})=> {
     const auth=false
     const obj:any={}
     let refer=useRef(null)
-    console.log(data.phones.length, "hire")
     return (
         <div className={cls.container}>
             <label htmlFor="phone">Введите номер телефона ниже</label>
@@ -98,7 +97,7 @@ const Input:FC<InputProps> =({onGetPerson})=> {
                     placeholder="+7 ( 999 ) - 999 - 99 - 99"  value={state} onKeyDown={callbacks.del}  onChange={callbacks.onChangeText} className={cls.input}/>
                      */}
                 {auth ? <FaRegTimesCircle color={RED} size={20}/> :
-                <div onClick={callbacks.onClick} className={cls.send}> <FaFacebookMessenger  color={PINK} size={25}/></div>}
+                <div onClick={callbacks.onClick} className={cls.send}> <FaSms  color={PINK} size={25}/></div>}
                
             </div>
         </div>

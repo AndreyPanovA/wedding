@@ -12,6 +12,9 @@ import data from "../../data"
 import {connect} from "react-redux"
 import {setAuth,setUserInfo} from "../../redux/reducers/auth"
 import { withRouter} from "react-router";
+import { FaRegTimesCircle, FaTelegram, FaSms, FaArrowLeft, FaQuoteLeft } from 'react-icons/fa';
+import { PINK } from "../../constants";
+
 // Navigation
 interface Props  {
     isAuth:boolean,
@@ -37,7 +40,7 @@ const Questions:FC<Props> =({history})=> {
     return (
         <div className={cn(cls.container)}>
             <div onClick={callbacks.goBack} className={cls.goBack}>
-                <p>{"<- назад" }</p>
+                <p style={{display:"flex", alignItems:"center"}}> <FaArrowLeft color={PINK} />{"Назад" }</p>
             </div>
             {data.questionsPreview.messages.map(({text},idx)=> <div key={idx}><Message text={text} idx={idx}/></div>)}
             <div className={cls.questions}>
@@ -49,8 +52,7 @@ const Questions:FC<Props> =({history})=> {
                     )
                 })}
             </div>
-            <Message text={state} idx={"cool"}/>
-      
+            {state && <Message text={state} idx={"cool"} />}
         </div>
     )
 }

@@ -12,7 +12,7 @@ interface WelcomeProps  {
     history:any
 }
 const Welcome:FC<WelcomeProps> =({userInfo,history})=> {
-
+    
 
     return (
         <div className={cn(cls.container)}>
@@ -29,8 +29,10 @@ const Welcome:FC<WelcomeProps> =({userInfo,history})=> {
                 </div>
                 <TimeBlockInfo userInfo={userInfo} />
                 <p>Также просим вас заполнить анкету, чтобы мы смогли учесть ваши пожелания.  </p>
+                <div className={cls.form}>
+                    <a href="https://forms.gle/G8vCG8oC79BCgdyZ6" >Нажми меня</a>
+                </div>
                 <div className={cls.questionsContainer} >
-             
                     <div className={cls.questionsContent} onClick={()=>{
                         history.push("/questions")
                     }}>

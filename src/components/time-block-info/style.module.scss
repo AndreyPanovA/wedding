@@ -37,6 +37,9 @@
         
             width: 100%;
         }
+        .year {
+            margin-left: 10px;
+        }
 
         &:last-child {
             flex-basis: 50%;
@@ -50,14 +53,14 @@
     }
     h2{
         font-size: 60px;
-        margin-right: 10px;
+      
         white-space: nowrap;
+      
     }
     h3 {
         font-size: 25px;
         line-height: 30px;
         font-family: "pro";
-        margin: 10px;
         &:last-child {
             color: #388AAD;
         }
@@ -78,10 +81,10 @@
         text-decoration: none;
         animation-duration: 3s;
         animation-iteration-count: infinite;
-        animation-name: shine;
+        // animation-name: shine;
         transition: 0.2s ease-in-out;
         &:hover {
-            color:$pink;
+           opacity: 0.5;
 
         }
         
@@ -117,6 +120,7 @@
         flex-basis: 100% !important;
         justify-content: flex-start !important;
         width: 100% !important;
+    
         .timeContainerWrapper {
             justify-content: flex-start !important;
             flex-basis: 100% !important;

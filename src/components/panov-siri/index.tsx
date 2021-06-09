@@ -5,6 +5,7 @@ const PanovSiri =(props:any)=> {
     return (
         <div className={cls.container}>
             {/* <img src={siri}/> */}
+            
         </div>
     )
 }

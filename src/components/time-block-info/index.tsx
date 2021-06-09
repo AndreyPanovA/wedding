@@ -40,11 +40,11 @@ const TimeText:FC<Props> = ({hours="17", minutes="00", mounth="07",year="2021", 
                             <h2>{hours}</h2>
                             <div>
                                 {type==="date" ? 
-                                <>
+                                <div className={cls.year}>
                                     <p>{mounth}</p>
                                     <p>{year}</p>
-                                </>:
-                                <h2>{`: ${minutes}`}</h2>}
+                                </div>:
+                                <h2>{`:${minutes}`}</h2>}
                             </div>
                     </div>
                     }
