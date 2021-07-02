@@ -4,7 +4,7 @@ import React, { FC } from "react"
 import cls from "./style.module.scss"
 import cn from "classnames"
 import { IoCalendarOutline } from "react-icons/io5"
-import {WiTime4, BsGeoAlt} from "react-icons/all"
+import {WiTime4, BsGeoAlt, BiLink} from "react-icons/all"
 
 import {  GREY, PINK } from "../../constants"
 interface Props {
@@ -33,7 +33,7 @@ const TimeText:FC<Props> = ({hours="17", minutes="00", mounth="07",year="2021", 
                     {type==="text" ? 
                     <div className={cn(cls.small)}>
                         <h3>{title?.top}</h3>
-                        <a href={href} className={cls.a}>{title?.bottom}</a>
+                        <a href={href} className={cls.a}>{title?.bottom}<BiLink /></a>
                     </div>
                     :
                     <div className={cn(cls.timeContainer)}>
